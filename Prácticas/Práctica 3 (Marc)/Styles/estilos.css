@@ -1,0 +1,41 @@
+body{
+font-family: x-large;
+}
+
+h1{
+  text-align: center;
+  font-size: x-large;
+  font: cursive;
+}
+
+#header2 {
+  background-position:  center center;
+  background-repeat: no-repeat;
+  background-image: url("http://www.misfondoshd.com/wallpapers/resoluciones/13/moto-en-llamas-2_1366x768_2904.jpg"); 
+  height: 400px;
+  }
+  
+
+#contenedor{
+	width: 900px;
+	margin: 0 auto;
+	border: 10px;
+}
+
+
+article{
+  float:left;
+  width: 150 px;
+  border: 10px;
+  border-color:red;  
+}
+
+
+h2{
+	font-weight: bold;
+
+}
+p{
+	text-align: center;
+
+}
