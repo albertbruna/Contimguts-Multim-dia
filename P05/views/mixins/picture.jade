@@ -1,6 +1,7 @@
 mixin picture(pics)
-    article.imagen
-        img(src=sourceImage,width="200")
-        p #{titulo}
-        p #{price}
-        input.boton(type="button", value="Buy", onclick="comprar('#{pics.name}', '#{pics.getPrice()}');", style="color:#000000;background-color:#ffffff")
+    div.col-md-4.product-box
+      article.imagen 
+          img(src=pics.image,width="200")
+          p #{pics.name}
+          p #{pics.getPrice()} €
+          input.boton(type="button", value="Buy", onclick="comprar('#{pics.name}', '#{pics.getPrice()}');", style="color:#000000;background-color:#ffffff")
