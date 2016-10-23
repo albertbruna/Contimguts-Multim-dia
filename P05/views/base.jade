@@ -1,0 +1,58 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title  SfM
+        // Bootstrap
+        link(href='public/styles.css', rel='stylesheet')
+        link(href='libs/css/bootstrap.min.css', rel='stylesheet')
+        // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+        // WARNING: Respond.js doesn't work if you view the page via file://
+        //if lt IE 9
+        script(src='https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js')
+        script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+        // jQuery (necessary for Bootstrap's JavaScript plugins)
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+        // Include all compiled plugins (below), or include individual files as needed
+        script(src='libs/js/bootstrap.min.js')
+        script(src='public/client.js')
+
+    body
+        header
+            h1  ლ · · New in · · ლ
+
+        - var navmenu = { Portada: '/', "Ofertes": '/recent' }
+        nav.navbar.navbar-default(role='navigation')
+            div.navbar-header
+                button(type='button',data-toggle='collapse',data-target='#jcs-navbar-collapse-1').navbar-toggle
+                    span.sr-only Toggle navigation
+                    span.iconbar
+                    span.iconbar
+                    span.iconbar
+                a(href='#').navbar-brand Continguts Multimèdia
+            div#jcs-navbar-collapse-1.collapse.navbar-collapse
+                ul.nav.navbar-nav
+
+                    each href, key in navmenu
+                        if key == pagekey
+                            li.active: a(href=href)= key
+                        else
+                            li: a(href=href)= key
+
+        ul.menu
+            li
+                a(href='#') Menú principal
+                ul.subnavegador
+                    li
+                        input(type='button', value='Todos los articulos disponibles', onclick="window.location.href='/Pagina1.html'")
+                    li
+                        input(type='button', value='Ofertas', onclick="window.location.href='/Pagina2.html'")
+        #contenedor
+            block content
+
+    center
+        footer.footer
+            .container
+                p.text-muted Continguts Multimèdia - Albert Bruna, UPC

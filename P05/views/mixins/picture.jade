@@ -1,0 +1,6 @@
+mixin picture(pics)
+    article.imagen
+        img(src=sourceImage,width="200")
+        p #{titulo}
+        p #{price}
+        input.boton(type="button", value="Buy", onclick="comprar('#{pics.name}', '#{pics.getPrice()}');", style="color:#000000;background-color:#ffffff")

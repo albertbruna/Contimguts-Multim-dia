@@ -1,0 +1,12 @@
+extends base
+include mixins/picture
+
+block content
+    .jumbotron
+        h1 Benvingut a la tenda
+        a.btn.btn-primary.btn-lg(href='#',role='button') Veure ofertes
+     div.row
+         - for (var i=0; i<pics.length; ++i){
+            //+picture(pics[i].href, pics[i].titulo, pics[i].getPrice())
+            +picture(pics[i])
+         - }
