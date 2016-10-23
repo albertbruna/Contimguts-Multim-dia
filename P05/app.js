@@ -1,7 +1,3 @@
-/**
- * Created by boyander on 11/10/16.
- */
-
 var express = require('express');
 var Item = require('./Item.js').Item;
 var app = express();
@@ -14,7 +10,7 @@ app.set('views', __dirname + '/views');
 app.use("/libs",express.static('node_modules/bootstrap/dist'));
 
 // Our CSS and JS files
-app.use("public",express.static('public'));
+app.use("/public",express.static('public'));
 
 
 // Use 500px API to get random pictures for our products
@@ -33,7 +29,7 @@ var pics = [
     new Item("https://mosaic02.ztat.net/vgs/media/catalog1/RI/91/1L/02/VQ/11/RI911L02V-Q11@12.jpg","River Island","54.95")
 ];
 */
-api500px.photos.searchByTerm('Laptop', {'sort': 'created_at', 'rpp': '10','image_size':200},  function(error, results) {
+api500px.photos.searchByTerm('Zapatos tacon', {'sort': 'created_at', 'rpp': '10','image_size':200},  function(error, results) {
     // Do something
     pics = results.photos.map(function(a){
         // Compose object to be used in show items template

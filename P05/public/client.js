@@ -6,5 +6,3 @@ $(document).ready(function() {
             $(this).find('ul').css({display: "none"});
         });
 });
-
-

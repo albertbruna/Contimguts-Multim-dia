@@ -4,4 +4,4 @@ mixin picture(pics)
           img(src=pics.image,width="200")
           p #{pics.name}
           p #{pics.getPrice()} €
-          input.boton(type="button", value="Buy", onclick="comprar('#{pics.name}', '#{pics.getPrice()}');", style="color:#000000;background-color:#ffffff")
+          input.boton(type="button", value="Buy", onclick="comprar('#{pics.name}', '#{pics.getPrice()}');")

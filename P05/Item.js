@@ -2,7 +2,7 @@
 var Item = function Item(imagen){
     this.image = imagen;
     this.price = 0.00;
-    this.name = "Laptop";
+    this.name = "Zapato";
 };
 
 // Get random price in range min, max

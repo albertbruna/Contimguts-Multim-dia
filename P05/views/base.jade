@@ -4,7 +4,7 @@ html
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport', content='width=device-width, initial-scale=1')
-        title  PC's
+        title  Moda
         // Bootstrap
         link(href='public/styles.css', rel='stylesheet')
         link(href='libs/css/bootstrap.min.css', rel='stylesheet')
@@ -21,7 +21,8 @@ html
 
     body
         header
-            h1  ლ · · New in · · ლ
+            center
+                h1  ლ · · New in · · ლ
 
         - var navmenu = { Portada: '/', "Ofertes": '/recent' }
         nav.navbar.navbar-default(role='navigation')
@@ -31,7 +32,7 @@ html
                     span.iconbar
                     span.iconbar
                     span.iconbar
-                a(href='#').navbar-brand Continguts Multimèdia
+                a(href='#').navbar-brand Sabates dona
             div#jcs-navbar-collapse-1.collapse.navbar-collapse
                 ul.nav.navbar-nav
 
@@ -46,13 +47,13 @@ html
                 a(href='#') Menú principal
                 ul.subnavegador
                     li
-                        input(type='button', value='Todos los articulos disponibles', onclick="")
+                        input(type='button', value='Articles disponibles', onclick="")
                     li
-                        input(type='button', value='Ofertas', onclick="")
+                        input(type='button', value='Ofertes', onclick="")
         #contenedor
             block content
 
     center
         footer.footer
             .container
-                p.text-muted Continguts Multimèdia - Albert Bruna, UPC
+                p.text-muted Continguts Multimèdia - Albert Bruna i Ana Piernas, UPC
