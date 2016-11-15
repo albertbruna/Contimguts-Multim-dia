@@ -1,1 +1,2 @@
-Albert Bruna Camprodón
+Albert Bruna
+Ana Piernas
