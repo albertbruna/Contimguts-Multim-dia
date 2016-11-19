@@ -1,0 +1,33 @@
+#timer {
+    position: center;
+    top:100px;
+    left:120px;
+    font-size: 60px;
+    color:white;
+}
+
+#local {
+    border: 10px;
+    position: center;
+    top:100px;
+    left:1000px;
+    font-size: 30px;
+    color:white;
+}
+
+#visitante {
+    position: center;
+    top:100px;
+    left:1000px;
+    font-size: 30px;
+    color:white;
+}
+
+body{
+    background-color: black;
+    text-align: center;
+}
+
+h1, h4{
+    color: #FFFFFF;
+}
