@@ -44,3 +44,13 @@ function num(key) {
             return '0';
     }
 }
+
+function onInputUp(button) {
+
+    calculator.add.tween(button.scale).to({x: 1, y: 1}, 200, Phaser.Easing.Cubic.Out, true);
+}
+
+function onInputDown(button) {
+
+    calculator.add.tween(button.scale).to({x: 0.8, y: 0.8}, 200, Phaser.Easing.Cubic.Out, true);
+}
