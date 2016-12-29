@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Mapa con marcadores y ubicación</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      
+      #map {
+        height: 100%;
+      }
+    
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+	var map;
+	var myLatLng;
+	var image = 'image.png';
+	
+	if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            initMap(position.coords.latitude, position.coords.longitude);
+        });
+		
+		function initMap(latitud, longitud) {
+			
+			myLatLng = {lat: latitud, lng: longitud};
+				
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: myLatLng,
+				zoom: 11,
+			});
+				
+			var marcadores = [
+				['Ubicación', myLatLng.lat, myLatLng.lng],
+				['Estació Vallparadís', 41.563381,  2.019032],
+        		['Escola suprior de Cinema ', 41.561056,  2.023043],
+        		['Estació Terrassa Centre', 41.559751, 2.007486],
+       			['Parc Vallés', 41.546015, 2.024862],
+       			
+			];
+				
+			var infowindow = new google.maps.InfoWindow();
+			var nMarker, i;
+			nMarker = new google.maps.Marker({
+				position: myLatLng,
+				map: map
+			});
+				
+			google.maps.event.addListener(nMarker, 'click', (function(nMarker) {
+				return function() {
+					infowindow.setContent(marcadores[0][0]);
+					infowindow.open(map, nMarker);
+				}
+			})(nMarker, 0));
+			
+			for (i = 1; i < marcadores.length; i++) {
+				nMarker = new google.maps.Marker({
+					position: new google.maps.LatLng(marcadores[i][1], marcadores[i][2]),
+					map: map,
+					icon: image,
+				});
+				google.maps.event.addListener(nMarker, 'click', (function(nMarker, i) {
+					return function() {
+						infowindow.setContent(marcadores[i][0]);
+						infowindow.open(map, nMarker);
+					}
+				})(nMarker, i));
+			}
+		}
+    } else {
+		alert("No es posible localizarte.");
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyChWvirr0jSlNSktlk12bJG22svkN6TP7o&callback=initMap"
+    async defer></script>
+  </body>
+</html>
